@@ -41,7 +41,7 @@ def show_path(parent, target):
     return path
 
 if __name__ == "__main__":
-    graph_22 = {
+    graph = {
     1: [(2, 1), (11, 1)],
     2: [(1, 1), (3, 1), (21, 1)],
     3: [(2, 1), (4, 1), (8, 2)],
