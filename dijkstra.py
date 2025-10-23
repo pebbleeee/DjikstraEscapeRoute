@@ -38,7 +38,10 @@ def show_path(parent, target):
 
 if __name__ == "__main__":
     graph = {
-        #add edges
+        1: [(2,1), (3,4)],
+        2: [(1,1), (3,2), (4,5)],
+        3: [(1,4), (2,2), (4,1)],
+        4: [(2,5), (3,1)]
     }
 
     source = 'A'
