@@ -28,7 +28,12 @@ def dijkstra(graph, source):
 
 def show_path(parent, target):
     path = []
-    #implement path reconstruction
+    cur = target
+    while cur is not None:
+        path.append(cur)
+        cur = parent[cur]
+
+    path.reserve()
     return path
 
 if __name__ == "__main__":
