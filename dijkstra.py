@@ -44,7 +44,7 @@ if __name__ == "__main__":
         4: [(2,5), (3,1)]
     }
 
-    source = 'A'
+    source = 1
     dist, parent = dijkstra(graph, source)
-    target = 'D'
+    target = 4
     #print distances and path
