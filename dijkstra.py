@@ -17,12 +17,16 @@ def dijkstra(graph, source):
             continue
         visited.add(u)
 
+        print(f"Visiting node {u} with current distance {du}")
+
         for v, w in graph[u]:
             #relaxation
             if dist[v] > dist[u] + w:
+                old_dist = dist[u]
                 dist[v] = dist[u] + w
                 parent[v] = u
                 heapq.heappush(Q, (dist[v], v))
+                print(f"    Updated distance[{v}] from {old_dist} to {dist[v]}, parent[{v}] = {u}")
 
     return dist, parent
 
@@ -45,6 +49,17 @@ if __name__ == "__main__":
     }
 
     source = 1
+    targets = [2,3,4]
     dist, parent = dijkstra(graph, source)
-    target = 4
+
     #print distances and path
+
+    print("\nFinal distances and parents:")
+    print("Vertex\tDistance\tParent")
+    for v in sorted(graph):
+        print(f"{v}\t{dist[v]}\t{parent[v]}")
+
+    print("\nPaths to targets:")
+    for t in targets:
+        path = show_path(parent, t)
+        print(f"Path to {t}: {path} with distance {dist[t]}")
